@@ -1,0 +1,66 @@
+{
+    "formTitle": "Registro de Usuario",
+    "fields": [
+      {
+        "name": "nombre",
+        "label": "Nombre y Apellido",
+        "type": "text",
+        "default": "",
+        "maxLength": 50,
+        "required": true,
+        "validations": [
+          { "type": "required", "message": "El nombre es obligatorio." },
+          { "type": "minLength", "value": 3, "message": "Debe tener al menos 3 caracteres." },
+          { "type": "regex", "pattern": "^[a-zA-ZáéíóúÁÉÍÓÚ\\s]+$", "message": "Solo letras y espacios." },
+          { "type": "complex", "rules": { "noNumbers": true }, "message": "No debe contener números." }
+        ]
+      },
+      {
+        "name": "mail",
+        "label": "Mail",
+        "type": "email",
+        "default": "",
+        "maxLength": 30,
+        "required": true,
+        "validations": [
+          { "type": "required", "message": "El mail es obligatorio." },
+          { "type": "regex", "pattern": "^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$", "message": "Formato inválido." }
+        ]
+      },
+      {
+        "name": "codArea",
+        "label": "Código de Área",
+        "type": "number",
+        "default": "",
+        "maxLength": 4,
+        "required": true,
+        "validations": [
+          { "type": "required", "message": "Campo obligatorio." },
+          { "type": "maxLength", "value": 4, "message": "Máximo 4 dígitos." }
+        ]
+      },
+      {
+        "name": "telefono",
+        "label": "Teléfono",
+        "type": "number",
+        "default": "",
+        "required": true,
+        "validations": [
+          { "type": "required", "message": "El teléfono es obligatorio." },
+          { "type": "minLength", "value": 7, "message": "Mínimo 7 dígitos." }
+        ]
+      },
+      {
+        "name": "vivienda",
+        "label": "Vivienda",
+        "type": "selectable",
+        "default": "",
+        "required": true,
+        "options": ["Casa", "Departamento"],
+        "validations": [
+          { "type": "required", "message": "Campo obligatorio." }
+        ]
+      }
+    ]
+  }
+  
