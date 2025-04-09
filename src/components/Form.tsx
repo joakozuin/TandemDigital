@@ -8,6 +8,8 @@ import { Number } from "./fields/Number";
 import { Select } from "./fields/Select";
 import styles from "./Form.module.css";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
+import { Modal } from "./modal/modal"; // Importamos el componente Modal
 
 type FormValues = {
   [key: string]: string | number | boolean;
@@ -36,23 +38,42 @@ export default function Form() {
     register,
     handleSubmit,
     formState: { errors },
-    reset, 
+    reset,
   } = useForm<FormValues>();
 
-  //nota 
-  //Después de guardar los datos, se llama a la función reset() para limpiar los valores del formulario
-  
+  // Estado para controlar la visibilidad del modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Función para abrir el modal
+  const openModal = () => setIsModalOpen(true);
+
+  // Función para cerrar el modal
+  const closeModal = () => setIsModalOpen(false);
+
+  // Estado para almacenar los datos guardados en localStorage
+  const [storedData, setStoredData] = useState<FormValues[]>([]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedData = localStorage.getItem("formData");
+      setStoredData(storedData ? JSON.parse(storedData) : []);
+    }
+  }, []);
+
+  const getStoredData = () => storedData;
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     try {
       // Obtener los datos previamente guardados en localStorage
-      const storedData = localStorage.getItem("formData");
-      const parsedData = storedData ? JSON.parse(storedData) : [];
-
-      // Agregar los nuevos datos al array existente
-      parsedData.push(data);
+      const parsedData = [...storedData, data];
 
       // Guardar el array actualizado en localStorage
-      localStorage.setItem("formData", JSON.stringify(parsedData));
+      if (typeof window !== "undefined") {
+        localStorage.setItem("formData", JSON.stringify(parsedData));
+      }
+
+      // Actualizar el estado local con los nuevos datos
+      setStoredData(parsedData);
 
       // Mostrar mensaje de éxito con SweetAlert
       Swal.fire({
@@ -64,7 +85,7 @@ export default function Form() {
       });
 
       // Limpiar el formulario
-      reset(); // Restablecer los valores del formulario
+      reset();
     } catch (error) {
       console.error("Error al guardar los datos:", error);
       Swal.fire({
@@ -75,7 +96,10 @@ export default function Form() {
       });
     }
 
-    console.log("Datos guardados:", data);
+    console.log("Estamos en la funcion de enviar formulario");
+    console.log("Mostrame el resultado de data");
+    console.log(data);
+
   };
 
   const onError = (formErrors: FieldErrors<FormValues>) => {
@@ -90,17 +114,36 @@ export default function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit, onError)} className={styles.formContainer}>
-      <h2 className={styles.title}>{formJson.formTitle}</h2>
-
-      {formJson.fields.map((field: FieldConfig) =>
-        getFieldComponent(field, register, errors)
-      )}
-
-      <button type="submit" className={styles.submitButton}>
-        Enviar
+    <div className={styles.container}>
+      {/* Botón "Ver Productos" */}
+      <button type="button" onClick={openModal} className={styles.viewButton}>
+        Ver Productos
       </button>
-    </form>
+
+      {/* Formulario */}
+      <form
+        onSubmit={handleSubmit(onSubmit, onError)}
+        className={styles.formContainer}
+      >
+        <h2 className={styles.title}>{formJson.formTitle}</h2>
+
+        {formJson.fields.map((field: FieldConfig) =>
+          getFieldComponent(field, register, errors)
+        )}
+
+        <button type="submit" className={styles.submitButton}>
+          Enviar
+        </button>
+      </form>
+
+      {/* Modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        data={getStoredData()} // Usa la función getStoredData
+        fields={formJson.fields}
+      />
+    </div>
   );
 }
 

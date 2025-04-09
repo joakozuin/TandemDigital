@@ -6,7 +6,7 @@
 
 ## 🧪 Proyecto - Generador de Formulario Dinámico con Validaciones Avanzadas
 
-El desarrollo consiste en una aplicación web que permite generar un formulario dinámico a partir de una configuración JSON. El formulario incluye campos de texto, números y selección desplegable, todos con validaciones personalizadas.
+Este proyecto consiste en una aplicación web desarrollada con **Next.js** y **React**, que genera un formulario dinámico a partir de un archivo de configuración (`formConfig.json`). Los campos incluyen texto, números y selección desplegable, y cuentan con validaciones personalizadas implementadas con `react-hook-form`.
 
 ---
 
@@ -23,13 +23,46 @@ El desarrollo consiste en una aplicación web que permite generar un formulario 
 
 ## 📋 Funcionalidades
 
-- Renderizado dinámico de campos a partir de un archivo `formConfig.json`.
+- Renderizado dinámico de campos desde archivo JSON.
 - Validaciones en tiempo real de campos requeridos.
-- Mensajes de error personalizados.
-- Estilos personalizados y responsive.
-- Alertas de éxito y error con SweetAlert2.
-- Organización de componentes reutilizables (`TextField`, `NumberField`, `SelectField`).
-- Separación clara entre lógica y presentación.
+- Mensajes de error personalizados para cada campo.
+- Estilos modernos, claros y responsivos.
+- Alertas visuales con `SweetAlert2` para éxito o error.
+- Componentes reutilizables: `TextField`, `NumberField`, `SelectField`.
+- Lógica desacoplada de la presentación.
+- 📦 Almacenamiento local (`localStorage`) de los datos ingresados.
+- 🪟 Modal para visualizar los datos guardados.
+- 📊 Tabla que lista los datos almacenados.
 
 ---
 
+## 🚀 Uso de la Aplicación
+
+### Inicio
+- El sistema carga la pantalla principal con el formulario dinámico:
+
+![Pantalla de inicio](./public/pantalla1.png)
+
+### Envío Exitoso
+- Al completar correctamente los campos, se muestra una alerta de éxito:
+
+![Éxito](./public/pantalla2.png)
+
+### Validación de Errores
+- Si hay campos vacíos o mal completados, se muestran alertas y errores:
+
+
+![Error ejemplo 1](./public/pantalla3.png)
+![Error ejemplo 2](./public/pantalla4.png)
+![Error ejemplo 3](./public/pantalla5.png)
+
+### Almacenamiento y Visualización
+- Una vez enviados, los datos se guardan en `localStorage`:
+
+![Guardado local](./public/pantalla9.png)
+
+- Luego, se pueden visualizar en una tabla:
+
+![Tabla con datos](./public/pantalla10.png)
+
+---
