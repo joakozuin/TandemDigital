@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Prueba Técnica TANDEM DIGITAL
 
-## Getting Started
+### Joaquín Sebastián Zuin
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🧪 Proyecto - Generador de Formulario Dinámico con Validaciones Avanzadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El desarrollo consiste en una aplicación web que permite generar un formulario dinámico a partir de una configuración JSON. El formulario incluye campos de texto, números y selección desplegable, todos con validaciones personalizadas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧩 Tecnologías Utilizadas
 
-## Learn More
+- ⚛️ React
+- ⏩ Next.js
+- 🟦 TypeScript
+- 🎨 CSS Modules
+- ✅ react-hook-form
+- 🔔 sweetalert2
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📋 Funcionalidades
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Renderizado dinámico de campos a partir de un archivo `formConfig.json`.
+- Validaciones en tiempo real de campos requeridos.
+- Mensajes de error personalizados.
+- Estilos personalizados y responsive.
+- Alertas de éxito y error con SweetAlert2.
+- Organización de componentes reutilizables (`TextField`, `NumberField`, `SelectField`).
+- Separación clara entre lógica y presentación.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
