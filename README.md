@@ -9,6 +9,8 @@
 Este proyecto consiste en una aplicación web desarrollada con **Next.js** y **React**, que genera un formulario dinámico a partir de un archivo de configuración (`formConfig.json`). Los campos incluyen texto, números y selección desplegable, y cuentan con validaciones personalizadas implementadas con `react-hook-form`.
 
 ---
+## ⚙️ Instalación
+Luego de clonar el repositorio, debe instalar la aplicacion mediante "npm install" e iniciarla con "npm run dev". Se abrira el navegador http://localhost:3000 para su visualizacion.
 
 ## 🧩 Tecnologías Utilizadas
 
