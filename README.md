@@ -53,8 +53,10 @@ Este proyecto consiste en una aplicación web desarrollada con **Next.js** y **R
 
 
 ![Error ejemplo 1](./public/pantalla3.png)
-![Error ejemplo 2](./public/pantalla4.png)
-![Error ejemplo 3](./public/pantalla5.png)
+![Error ejemplo 2](./public/pantalla7.png)
+![Error ejemplo 3](./public/pantalla4.png)
+![Error ejemplo 4](./public/pantalla5.png)
+![Error ejemplo 5](./public/pantalla6.png)
 
 ### Almacenamiento y Visualización
 - Una vez enviados, los datos se guardan en `localStorage`:

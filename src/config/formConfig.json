@@ -41,7 +41,7 @@
       },
       {
         "name": "telefono",
-        "label": "Teléfono",
+        "label": "Teléfono fijo",
         "type": "number",
         "default": "",
         "required": true,

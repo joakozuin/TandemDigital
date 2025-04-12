@@ -21,7 +21,7 @@ export const Modal = ({ isOpen, onClose, data, fields }: ModalProps) => {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <h3 className={styles.title}>Productos Guardados</h3>
+        <h3 className={styles.title}>Usuarios Guardados</h3>
         <table className={styles.table}>
           <thead>
             <tr>

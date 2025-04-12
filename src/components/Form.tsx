@@ -9,7 +9,7 @@ import { Select } from "./fields/Select";
 import styles from "./Form.module.css";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
-import { Modal } from "./modal/modal"; // Importamos el componente Modal
+import { Modal } from "./modal/modal"; 
 
 type FormValues = {
   [key: string]: string | number | boolean;
@@ -115,9 +115,9 @@ export default function Form() {
 
   return (
     <div className={styles.container}>
-      {/* Botón "Ver Productos" */}
+      
       <button type="button" onClick={openModal} className={styles.viewButton}>
-        Ver Productos
+        Ver Usuarios Registrados
       </button>
 
       {/* Formulario */}
@@ -140,7 +140,7 @@ export default function Form() {
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
-        data={getStoredData()} // Usa la función getStoredData
+        data={getStoredData()} 
         fields={formJson.fields}
       />
     </div>
