@@ -1,0 +1,137 @@
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 1.5rem; 
+    margin: 2rem auto; 
+    max-width: 600px; 
+  }
+  
+  /* Botón "Ver Productos" */
+  .viewButton {
+    padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #4dd312;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: fixed; 
+  top: 8rem; 
+  right: 1rem; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  /* Hover sobre el botón "Ver Productos" */
+  .viewButton:hover {
+    background-color: #1565c0; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Active (al hacer clic) */
+  .viewButton:active {
+    transform: translateY(0); 
+    box-shadow: none; 
+  }
+  
+  /* Contenedor del formulario */
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    border: 2px solid #2d8da8;
+    border-radius: 16px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Hover sobre el contenedor del formulario */
+  .formContainer:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 16px 48px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Título del formulario */
+  .title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2d96a8;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* Contenedor de cada campo de entrada */
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  /* Etiqueta de los campos */
+  .inputGroup label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  /* Estilo de los inputs y selectores */
+  .inputGroup input,
+  .inputGroup select {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Cambio de color del borde al enfocar */
+  .inputGroup input:focus,
+  .inputGroup select:focus {
+    border-color: #2d7da8;
+    outline: none;
+  }
+  
+  /* Mensajes de error */
+  .error {
+    color: #d32f2f; 
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    font-weight: 500;
+  }
+  
+  /* Botón de envío */
+  .submitButton {
+    background-color: #2d81a8; 
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 16px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    margin-top: 1rem; 
+}
+
+/* Efecto hover en el botón */
+.submitButton:hover {
+    background-color: #1b6492; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Efecto active en el botón (al hacer clic) */
+.submitButton:active {
+    transform: translateY(0); 
+    box-shadow: none; 
+}
+  
+  
+
+  
+  
